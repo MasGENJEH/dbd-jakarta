@@ -1,0 +1,15 @@
+# Folders to ignore
+/node_modules/
+/dist/node_modules/
+/pages
+/dev
+/assets/js
+/assets/img
+/assets/fonts
+
+# OS or Editor folders
+._*
+.cache
+.DS_Store
+.idea
+.vscode
