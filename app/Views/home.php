@@ -9,7 +9,6 @@
 <style>
     #map { 
         height: 600px; 
-        width: 1150px; 
         }
 </style>
 
@@ -74,12 +73,11 @@
                         <h4>Peta Persebaran Kasus Dbd</h4>
                 </div>
                 <div class="card-body">
-                    <div id="map">
+                    <div id="map" data-height="600">
                     </div>
                 </div>
             </div>
-            
-         </div>
+        </div>
     </div>
 
 
@@ -96,7 +94,13 @@
         L.marker([
             kasusDbd[i].lat,
             kasusDbd[i].long
-        ]).addTo(map);
+        ]).addTo(map).
+        bindPopup(
+            "<b>" + kasusDbd[i].lokasi + "</b><br/>" +
+            "Prediksi: " + kasusDbd[i].lat+ ", " + kasusDbd[i].long + "</b><br/>" +
+            "Tanggal Kasus: " + kasusDbd[i].tanggal_kasus
+        ).openPopup();
+
     }
     
 </script>

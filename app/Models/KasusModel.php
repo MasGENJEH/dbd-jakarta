@@ -10,15 +10,10 @@ class KasusModel extends Model
     protected $primaryKey = 'id';
     protected $returnType = 'object';
     protected $allowedFields = [
-        'nik',
         'lokasi',
-        'koordinat',
+        'lat',
+        'long',
         'jenis_kelamin',
-        'tanggal_lahir',
-        'status_keluarga',
-        'status_verifikasi_rt',
-        'status_verifikasi_rw',
-        'pendidikan_terakhir',
-        'pekerjaan',
-        'status_perkawinan'];
+        'tanggal_kasus',
+        'status_'];
 }

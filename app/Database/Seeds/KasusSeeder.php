@@ -30,7 +30,7 @@ class KasusSeeder extends Seeder
 
             $kasusDbd[] = [
                 'id' => $id,
-                'lokasi' => $faker->city(),
+                'lokasi' => $faker->streetAddress(),
                 'lat' => $faker->latitude($min = -6.40, $max = -6.10),
                 'long' => $faker->longitude($min = 106.70, $max = 107.00),
                 'jenis_kelamin' => $jenis_kelamin_fk,

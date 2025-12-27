@@ -11,6 +11,10 @@
         <li class="menu-header">Menu</li>
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('home'); ?>">
+                <span><i class="fa fa-home" aria-hidden="true"></i>Dashboard</span></a>
+        </li>
+         <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('/kasus'); ?>">
                 <span><i class="fa fa-home" aria-hidden="true"></i>Kasus Dbd</span></a>
         </li>
 
