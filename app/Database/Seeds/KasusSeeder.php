@@ -35,7 +35,7 @@ class KasusSeeder extends Seeder
                 'long' => $faker->longitude($min = 106.70, $max = 107.00),
                 'jenis_kelamin' => $jenis_kelamin_fk,
                 'status' => $status_fk,
-                'tanggal_kasus' => $faker->dateTimeBetween('-2 years', '-1 years')->format('Y-m-d'),
+                'tanggal_kasus' => $faker->dateTimeBetween('-2 years', 'today')->format('Y-m-d'),
             ];
         }
 

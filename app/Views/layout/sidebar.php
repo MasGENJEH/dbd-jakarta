@@ -14,7 +14,7 @@
                 <span><i class="fa fa-home" aria-hidden="true"></i>Dashboard</span></a>
         </li>
          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('/kasus'); ?>">
+            <a class="nav-link" href="<?php echo base_url('kasus'); ?>">
                 <span><i class="fa fa-home" aria-hidden="true"></i>Kasus Dbd</span></a>
         </li>
 
@@ -23,7 +23,7 @@
             <a class="nav-link has-dropdown" href="#">
                 <span><i class="fa fa-users" aria-hidden="true"></i>Pengguna</span></a>
             <ul class="dropdown-menu">
-                <li><a class="nav-link" href="<?php echo base_url('/pengguna'); ?>">
+                <li><a class="nav-link" href="<?php echo base_url('pengguna'); ?>">
                         <i class="fas fa-table fa-fw"></i>
                         <span>Tabel Pengguna</span></a></li>
                 <li><a class="nav-link" href="<?php echo base_url('/pengguna/tambah'); ?>">

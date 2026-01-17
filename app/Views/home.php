@@ -28,7 +28,7 @@
                         <h4>Total Kasus</h4>
                     </div>
                     <div class="card-body">
-                        43534
+                        <?php echo $jumlah_kasus_dbd; ?>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
                         <h4>Kasus Baru</h4>
                     </div>
                     <div class="card-body">
-                        3455
+                        <?php echo $jumlah_hari_ini; ?>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                     <div class="card-header">
                         <h4>Kasus Aktif</h4>
                     </div>
-                    <div class="card-body">34534
+                    <div class="card-body"><?php echo $jumlah_kasus_aktif; ?>
                     </div>
                 </div>
             </div>
