@@ -70,6 +70,19 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-12">
             <div class="card">
                 <div class="card-header">
+                    <h4>Statistik Kasus DBD Tahun <?php echo date('Y'); ?></h4>
+                </div>
+                <div class="card-body">
+                    <canvas id="myChart" height="100"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <div class="card-header">
                         <h4>Peta Persebaran Kasus Dbd</h4>
                 </div>
                 <div class="card-body">
@@ -102,7 +115,48 @@
         ).openPopup();
 
     }
-    
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+            datasets: [{
+                label: 'Kasus DBD',
+                data: <?php echo json_encode($statistik); ?>,
+                borderWidth: 2,
+                backgroundColor: 'rgba(63,82,227,.8)',
+                borderWidth: 0,
+                borderColor: 'transparent',
+                pointBorderWidth: 0,
+                pointRadius: 3.5,
+                pointBackgroundColor: 'rgba(63,82,227,.8)',
+                pointHoverBackgroundColor: 'rgba(63,82,227,.8)',
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                yAxes: [{
+                    gridLines: {
+                        drawBorder: false,
+                        color: '#f2f2f2',
+                    },
+                    ticks: {
+                        beginAtZero: true,
+                        stepSize: 10
+                    }
+                }],
+                xAxes: [{
+                    gridLines: {
+                        display: false
+                    }
+                }]
+            },
+        }
+    });
 </script>
 
 

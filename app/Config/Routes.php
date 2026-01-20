@@ -18,6 +18,7 @@ $routes->group('kasus', static function ($routes) {
     $routes->get('/', 'Kasus::index'); // View
     $routes->get('tambah', 'Kasus::new'); // Create Data
     $routes->post('save', 'Kasus::create');
+    $routes->get('detail/(:any)', 'Kasus::detail/$1');
     $routes->get('ubah/(:any)', 'Kasus::edit/$1'); // Edit/Update Data
     $routes->post('verifikasi-rt/(:any)', 'Kasus::verifikasiRt/$1');
     $routes->post('verifikasi-rw/(:any)', 'Kasus::verifikasiRw/$1');

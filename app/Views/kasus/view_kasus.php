@@ -63,6 +63,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Lokasi</th>
+                                    <th>Kota</th>
                                     <th>Koordinat</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Tanggal Kasus</th>
@@ -76,6 +77,7 @@
                                 <tr>
                                     <td><?php echo $no++; ?></td>
                                     <td><?php echo $value->lokasi; ?></td>
+                                    <td><?php echo $value->kota; ?></td>
                                     <td><?php echo $value->lat; ?>, <?php echo $value->long; ?></td>
                                     <td><?php echo $value->jenis_kelamin; ?></td>
                                     <td><?php echo $value->tanggal_kasus; ?></td>
@@ -110,7 +112,7 @@
                         <nav class="d-inline-block">
                             <?php echo $pager->links('default', 'pagination'); ?>
 
-                        </nav>
+                        </nav> 
                     </div>
                 </div>
             </div>
