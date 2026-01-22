@@ -152,6 +152,54 @@
         }
 
         marker.bindPopup('Lokasi Terpilih:<br>Lat: ' + lat + '<br>Lng: ' + lng).openPopup();
+
+        // Reverse Geocoding (Ambil Nama Kota otomatis)
+        console.log("Fetching address for:", lat, lng);
+        fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`)
+            .then(response => response.json())
+            .then(data => {
+                console.log("Nominatim Data:", data);
+                if (data.address) {
+                    // 1. Auto-fill Alamat (Lokasi)
+                    var fullAddress = data.display_name;
+                    document.getElementsByName('lokasi')[0].value = fullAddress;
+
+                    // 2. Auto-select Kota dengan Mapping (English -> Indo)
+                    var selectKota = document.getElementsByName('kota')[0];
+                    var cityFromApi = data.address.city || data.address.county || data.address.state_district || "";
+                    
+                    // Mapping nama kota dari API (mungkin Bahasa Inggris) ke Value Option (Bahasa Indonesia)
+                    var cityMapping = {
+                        "Central Jakarta": "Jakarta Pusat",
+                        "Jakarta Pusat": "Jakarta Pusat", 
+                        "North Jakarta": "Jakarta Utara",
+                        "Jakarta Utara": "Jakarta Utara",
+                        "West Jakarta": "Jakarta Barat",
+                        "Jakarta Barat": "Jakarta Barat",
+                        "South Jakarta": "Jakarta Selatan",
+                        "Jakarta Selatan": "Jakarta Selatan",
+                        "East Jakarta": "Jakarta Timur",
+                        "Jakarta Timur": "Jakarta Timur",
+                        "Thousand Islands": "Kepulauan Seribu",
+                        "Kepulauan Seribu": "Kepulauan Seribu"
+                    };
+
+                    // Coba cari match di mapping
+                    var matchedKota = null;
+                    Object.keys(cityMapping).forEach(function(key) {
+                        // Cek apakah string kota dari API mengandung key mapping (case insensitive)
+                        if (cityFromApi.toLowerCase().includes(key.toLowerCase()) || fullAddress.toLowerCase().includes(key.toLowerCase())) {
+                            matchedKota = cityMapping[key];
+                        }
+                    });
+
+                    if (matchedKota) {
+                        selectKota.value = matchedKota;
+                        console.log("Auto-selected:", matchedKota);
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching address:', error));
     }
 
     map.on('click', onMapClick);

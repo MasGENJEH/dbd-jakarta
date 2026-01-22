@@ -41,10 +41,9 @@ class User extends BaseController
     public function edit($id = null)
     {
         if ($id != null) {
-            $query = $this->user->getWhere(['id' => $id]);
-            if ($query->resultID->num_rows > 0) {
-                $data['user'] = $query->getRow();
-
+            $user = $this->user->find($id);
+            if ($user) {
+                $data['user'] = $user;
                 return view('user/form_edit', $data);
             } else {
                 throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound();
@@ -60,8 +59,13 @@ class User extends BaseController
             'username' => $this->request->getVar('username'),
             'email' => $this->request->getVar('email'),
             'role' => $this->request->getVar('role'),
-            'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT),
         ];
+
+        // Hanya update password jika diisi
+        $password = $this->request->getVar('password');
+        if (!empty($password)) {
+            $data['password'] = password_hash($password, PASSWORD_DEFAULT);
+        }
         unset($data['_method']);
 
         $this->user->update($id, $data);

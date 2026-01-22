@@ -48,6 +48,15 @@ class Home extends BaseController
         }
         $data['statistik'] = $statistik;
 
+        // Data Ranking Kota (Zona Merah)
+        $data['ranking'] = $this->kasus
+            ->select('kota, count(*) as jumlah')
+            ->whereIn('kota', ['Jakarta Pusat', 'Jakarta Utara', 'Jakarta Barat', 'Jakarta Selatan', 'Jakarta Timur', 'Kepulauan Seribu'])
+            ->groupBy('kota')
+            ->orderBy('jumlah', 'DESC')
+            ->get()
+            ->getResult();
+
         return view('home', $data);
     }
 }

@@ -66,12 +66,12 @@ foreach ($user as $key => $value) { ?>
                                     <td><?php echo $value->role; ?></td>
                                     <td>
                                         <a href="<?php echo base_url('pengguna/ubah/'.$value->id); ?>"
-                                            class="btn btn-warning"><i class="fas fa-pencil-alt"></i></a>
+                                            class="btn btn-warning"><i class="fas fa-pencil-alt"></i> Edit</a>
                                         <form class="d-inline" action="<?php echo base_url('pengguna/'.$value->id); ?>"
                                             method="post" onsubmit="return confirm('Anda yakin ingin menghapus data?')">
                                             <?php echo csrf_field(); ?>
                                             <input type="hidden" name="_method" value="DELETE">
-                                            <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                            <button class="btn btn-danger"><i class="fas fa-trash"></i> Hapus</button>
                                         </form>
                                     </td>
                                 </tr>

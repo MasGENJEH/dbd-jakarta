@@ -43,6 +43,7 @@ class CreateKasus extends Migration
                 'constraint' => [
                     'AKTIF',
                     'SEMBUH',
+                    'MENINGGAL',
                 ],
                 'null' => true,
             ],

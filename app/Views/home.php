@@ -80,13 +80,44 @@
     </div>
 
     <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+        <div class="col-lg-8 col-md-12 col-12 col-sm-12">
             <div class="card">
                 <div class="card-header">
                         <h4>Peta Persebaran Kasus Dbd</h4>
                 </div>
                 <div class="card-body">
                     <div id="map" data-height="600">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 col-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Ranking Kota (Top Kasus)</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Kota</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1; foreach($ranking as $row): ?>
+                                <tr>
+                                    <td><?php echo $no++; ?></td>
+                                    <td><?php echo $row->kota; ?></td>
+                                    <td>
+                                        <div class="badge badge-danger"><?php echo $row->jumlah; ?> Kasus</div>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

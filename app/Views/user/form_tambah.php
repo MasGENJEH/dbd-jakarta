@@ -57,12 +57,11 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="role_select">Pendidikan Terakhir</label>
+                                        <label for="role_select">Role</label>
                                         <select class="form-control" id="role_select" name="role">
                                             <option value="" selected disabled hidden>Pilih Role</option>
                                             <option value="admin">Admin</option>
-                                            <option value="rt">RT</option>
-                                            <option value="rw">RW</option>
+                                            <option value="user">User</option>
                                         </select>
                                     </div>
                                 </div>

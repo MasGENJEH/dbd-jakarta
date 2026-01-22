@@ -76,6 +76,7 @@ class Kasus extends BaseController
         $data = [
             'kasus' => $this->kasus->find($id),
         ];
+
         return view('kasus/form_ubah', $data);
     }
 
