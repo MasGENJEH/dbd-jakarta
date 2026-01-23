@@ -20,8 +20,6 @@ $routes->group('kasus', static function ($routes) {
     $routes->post('save', 'Kasus::create');
     $routes->get('detail/(:any)', 'Kasus::detail/$1');
     $routes->get('ubah/(:any)', 'Kasus::edit/$1'); // Edit/Update Data
-    $routes->post('verifikasi-rt/(:any)', 'Kasus::verifikasiRt/$1');
-    $routes->post('verifikasi-rw/(:any)', 'Kasus::verifikasiRw/$1');
     $routes->put('(:any)', 'Kasus::update/$1');
     $routes->delete('(:segment)', 'Kasus::delete/$1'); // Delete Data
 });

@@ -84,9 +84,10 @@
                                             <?php
                                                 $badge = [
                                                     'SEMBUH' => 'badge-success',
-                                                    'AKTIF' => 'badge-danger',
+                                                    'AKTIF' => 'badge-warning',
+                                                    'MENINGGAL' => 'badge-danger',
                                                 ];
-                                    $status = $value->status;
+                                    $status = strtoupper($value->status);
                                     ?>
                                     <td><span class="badge <?php echo $badge[$status]; ?>"><?php echo $value->status; ?></span></td>
 

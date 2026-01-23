@@ -96,4 +96,11 @@ class Kasus extends BaseController
 
         return redirect()->to(base_url('kasus'))->with('success', 'Data Berhasil Diupdate');
     }
+
+    public function delete($id)
+    {
+        $this->kasus->delete($id);
+
+        return redirect()->to(base_url('kasus'))->with('success', 'Data Berhasil Dihapus');
+    }
 }

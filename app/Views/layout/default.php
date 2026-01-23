@@ -27,5 +27,6 @@
     <?php echo $this->renderSection('tabel_kasus'); ?>
     <?php echo $this->renderSection('tabel_pengguna'); ?>
     <?php echo $this->renderSection('form_tambah'); ?>
+    <?php echo $this->renderSection('form_edit'); ?>
 </div>
 <?php echo $this->include('layout/footer'); ?>

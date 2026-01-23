@@ -21,7 +21,7 @@ class KasusSeeder extends Seeder
         // 2. Generate 100 data penduduk
         for ($i = 0; $i < 100; ++$i) {
             $gender = $faker->randomElement(['male', 'female']);
-            $status = $faker->randomElement(['AKTIF', 'SEMBUH', 'MENINGGAL']);
+            $status = $faker->randomElement(['aktif', 'sembuh', 'meninggal']);
             $jenis_kelamin_fk = ($gender == 'male') ? 'LAKI-LAKI' : 'PEREMPUAN';
 
             // Generate NIK unik 16 digit (dimulai 32 untuk kode provinsi Jawa Barat/Jawa Tengah)

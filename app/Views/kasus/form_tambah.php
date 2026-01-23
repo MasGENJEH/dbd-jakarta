@@ -83,6 +83,11 @@
                                                 id="radio_sembuh" value="sembuh" required>
                                             <label class="form-check-label" for="radio_sembuh">Sembuh</label>
                                         </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="status"
+                                                id="radio_meninggal" value="meninggal" required>
+                                            <label class="form-check-label" for="radio_meninggal">Meninggal</label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">

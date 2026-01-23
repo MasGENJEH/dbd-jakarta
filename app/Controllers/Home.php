@@ -37,6 +37,14 @@ class Home extends BaseController
             ->where('status', 'aktif')
             ->countAllResults();
 
+        $data['jumlah_sembuh'] = $this->kasus
+            ->where('status', 'sembuh')
+            ->countAllResults();
+
+        $data['jumlah_meninggal'] = $this->kasus
+            ->where('status', 'meninggal')
+            ->countAllResults();
+
         // Data Statistik Grafik (Kasus per Bulan di Tahun Ini)
         $tahun_ini = date('Y');
         $statistik = [];
